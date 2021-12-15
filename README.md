@@ -6,7 +6,7 @@
 
 ## Setup Your Environment
 1. Download Chrome WebDriver which is match your Chrome Version.
-2. Extract chromeDriver to your machine and copy the path of the drive.
+2. Extract chromeDriver to your machine and copy the path of the driver.
 3. Make sure you have stable network that able to login testray and navigate.I tested with Perimeter 81 connected which works well.
 4. Go to testrayHelperGradle root directory.
 5. Edit src/test/resources/testray.properties
