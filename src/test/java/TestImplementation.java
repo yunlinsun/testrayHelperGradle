@@ -120,18 +120,18 @@ public class TestImplementation {
 
             //select Blocked Status
             Select dropStatus = new Select(driver.findElement(By.xpath("//select[@id='status']")));
-            dropStatus.selectByVisibleText("Blocked");
+            dropStatus.selectByVisibleText("Passed");
 
             //comment
             WebElement commentField = driver.findElement(By.xpath("//textarea[@name='comment']"));
-            commentField.sendKeys("The case has been passed on the second run.");
+            commentField.sendKeys("The case has been passed on the other run.");
 
             //click Save button
             driver.findElement(By.xpath("//span[normalize-space(text())='Save']")).click();
 
             //Assert Blocked
             WebDriverWait wait = new WebDriverWait(driver, 10);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space(text())='Blocked']")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space(text())='Passed']")));
 
             System.out.println("Test case has been updated!");
             System.out.println("===============================");
