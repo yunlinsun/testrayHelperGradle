@@ -73,6 +73,20 @@ public class TestImplementation {
         String title = driver.getTitle();
         System.out.println("The Page Title is: " + title);
 
+        //Define testray user name, password, and sign in Field
+        WebElement userNameFieldtestray = driver.findElement(By.xpath("//div/span[contains(@class,'username')]//following-sibling::input"));
+        WebElement passwordFieldtestray = driver.findElement(By.xpath("//div/span[contains(@class,'password')]//following-sibling::input"));
+        WebElement signInButtontestray = driver.findElement(By.xpath("//div/input[@type='submit']"));
+
+        //Sing In Liferay
+        userNameFieldtestray.isDisplayed();
+        userNameFieldtestray.clear();
+        userNameFieldtestray.sendKeys(properties.getProperty("testray.user.name"));
+        passwordFieldtestray.sendKeys(properties.getProperty("testray.password"));
+        signInButtontestray.click();
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+
         //Define user name, password, and sign in Field
         WebElement userNameField = driver.findElement(By.xpath("//label[normalize-space(text())='Email Address']//following-sibling::input"));
         WebElement passwordField = driver.findElement(By.xpath("//label[normalize-space(text())='Password']//following-sibling::input"));
